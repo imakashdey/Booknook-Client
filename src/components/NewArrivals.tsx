@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { publicFetch } from "@/lib/api";
 import BookCard, { Book } from "./BookCard";
+import Reveal from "./Reveal";
 import Spinner from "./Spinner";
 
 export default function NewArrivals() {
@@ -18,7 +19,9 @@ export default function NewArrivals() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 lg:px-8">
-      <h2 className="mb-8 text-center text-3xl font-bold">New Arrivals</h2>
+      <Reveal>
+        <h2 className="mb-8 text-center text-3xl font-bold">New Arrivals</h2>
+      </Reveal>
       {loading ? (
         <Spinner />
       ) : books.length === 0 ? (

@@ -12,7 +12,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t){document.documentElement.setAttribute("data-theme",t)}}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <Suspense fallback={<header className="sticky top-0 z-50 bg-base-100 px-4 shadow-sm lg:px-8"><div className="flex h-16 items-center"><span className="loading loading-spinner loading-sm text-primary" /></div></header>}>
           <Navbar />

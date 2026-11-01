@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const publicLinks = [
   { href: "/", label: "Home" },
@@ -72,6 +73,7 @@ export default function Navbar() {
       </nav>
 
       <div className="navbar-end gap-2">
+        <ThemeToggle />
         {isPending ? (
           <span className="loading loading-spinner loading-sm text-primary" />
         ) : user ? (
