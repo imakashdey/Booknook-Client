@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import CurrentYear from "./CurrentYear";
+
 
 const socials = [
   {
