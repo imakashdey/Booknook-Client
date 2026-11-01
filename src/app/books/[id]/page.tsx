@@ -1,15 +1,23 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import BookDetails from "@/components/BookDetails";
 import Spinner from "@/components/Spinner";
 
 export const metadata: Metadata = { title: "Book Details" };
 
-export default async function BookDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+async function Content({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  return <BookDetails id={id} />;
+}
+
+export default function BookDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   return (
-    <Suspense fallback={<div className="flex justify-center py-20"><Spinner /></div>}>
-      <BookDetails id={id} />
+    <Suspense fallback={<Spinner />}>
+      <Content params={params} />
     </Suspense>
   );
 }
