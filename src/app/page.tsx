@@ -1,9 +1,13 @@
-import Image from "next/image";
+import HeroSlider from "@/components/HeroSlider";
+import NewArrivals from "@/components/NewArrivals";
+import HomeSections from "@/components/HomeSections";
 
 export default function Home() {
   return (
-    <main className="p-10">
-      <button className="btn btn-primary">BookNook Test</button>
+    <main>
+      <HeroSlider />
+      <NewArrivals />
+      <HomeSections />
     </main>
   );
 }
