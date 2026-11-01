@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import CurrentYear from "./CurrentYear";
 
 const socials = [
   {
@@ -57,7 +58,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-base-300 py-4 text-center text-sm text-base-content/70">
-        © {new Date().getFullYear()} BookNook. All rights reserved.
+        © 2026 BookNook. All rights reserved.
       </div>
     </footer>
   );
