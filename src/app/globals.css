@@ -1,5 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 @import "tailwindcss";
 
 @plugin "daisyui" {
   themes: light --default, dark;
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Color Hunt Palette: #FEFAF3, #F6E2E9, #B8CFB3, #84A282 */
+  --color-base-100: #fefaf3;
+  --color-base-200: #f4ede3;
+  --color-base-300: #e3d7c7;
+  --color-base-content: #212c23;
+  
+  --color-primary: #84a282;
+  --color-primary-content: #ffffff;
+  
+  --color-secondary: #f6e2e9;
+  --color-secondary-content: #4a333d;
+  
+  --color-accent: #b8cfb3;
+  --color-accent-content: #1d2a20;
+  
+  --color-neutral: #28372b;
+  --color-neutral-content: #fefaf3;
+  
+  --color-info: #7ea3b5;
+  --color-info-content: #ffffff;
+  --color-success: #709a72;
+  --color-success-content: #ffffff;
+  --color-warning: #d9a85c;
+  --color-warning-content: #2c1d04;
+  --color-error: #cb6b6b;
+  --color-error-content: #ffffff;
+  
+  --radius-selector: 0.75rem;
+  --radius-field: 0.625rem;
+  --radius-box: 1rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Dark mode harmonized with Color Hunt palette */
+  --color-base-100: #151d16;
+  --color-base-200: #1d271e;
+  --color-base-300: #29372b;
+  --color-base-content: #fefaf3;
+  
+  --color-primary: #84a282;
+  --color-primary-content: #ffffff;
+  
+  --color-secondary: #f6e2e9;
+  --color-secondary-content: #3a222e;
+  
+  --color-accent: #b8cfb3;
+  --color-accent-content: #131b14;
+  
+  --color-neutral: #0e140f;
+  --color-neutral-content: #e8f0e8;
+  
+  --color-info: #7ea3b5;
+  --color-info-content: #ffffff;
+  --color-success: #709a72;
+  --color-success-content: #ffffff;
+  --color-warning: #d9a85c;
+  --color-warning-content: #2c1d04;
+  --color-error: #cb6b6b;
+  --color-error-content: #ffffff;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-base-100);
+  color: var(--color-base-content);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+/* Custom aesthetic utility touches */
+.book-shadow {
+  box-shadow: 0 10px 25px -5px rgba(132, 162, 130, 0.15), 0 8px 10px -6px rgba(132, 162, 130, 0.1);
+}
+
+.book-shadow-hover:hover {
+  box-shadow: 0 20px 30px -10px rgba(132, 162, 130, 0.25), 0 10px 15px -5px rgba(132, 162, 130, 0.15);
+  transform: translateY(-3px);
+}
+
+.rose-badge {
+  background-color: #f6e2e9;
+  color: #4a333d;
+  border-color: #f0cfdb;
+}
+
+.sage-badge {
+  background-color: #b8cfb3;
+  color: #1d2a20;
+  border-color: #a4c09e;
+}
+
+select,
+::picker(select) {
+  background-color: var(--color-base-200);
 }

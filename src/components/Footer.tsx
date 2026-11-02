@@ -1,5 +1,5 @@
+import Link from "next/link";
 import Logo from "./Logo";
-
 
 const socials = [
   {
@@ -21,25 +21,60 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-base-300 bg-base-200">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:grid-cols-3 lg:px-8">
-        <div className="space-y-3">
+    <footer className="border-t border-base-300/70 bg-base-200/60 transition-colors">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:grid-cols-2 md:grid-cols-4 lg:px-8">
+        {/* Brand */}
+        <div className="space-y-4 sm:col-span-2 md:col-span-1">
           <Logo />
-          <p className="max-w-xs text-sm text-base-content/70">
-            BookNook is a small online library. Add a book, borrow a book and return a book.
+          <p className="max-w-xs text-sm leading-relaxed text-base-content/75">
+            BookNook is a cozy online community library. Add a book, borrow a book, and return a book with ease.
           </p>
+          
         </div>
 
-        <div className="space-y-2 text-sm">
-          <h3 className="text-lg font-semibold">Contact</h3>
-          <p className="text-base-content/70">Email: support@booknook.app</p>
-          <p className="text-base-content/70">Phone: +880 1700 000000</p>
-          <p className="text-base-content/70">Address: Dhaka, Bangladesh</p>
-        </div>
-
+        {/* Quick Links */}
         <div className="space-y-3">
-          <h3 className="text-lg font-semibold">Follow Us</h3>
-          <div className="flex gap-3">
+          <h3 className="font-serif text-base font-bold text-base-content">Navigation</h3>
+          <ul className="space-y-2 text-sm text-base-content/75">
+            <li>
+              <Link href="/" className="transition hover:text-primary">Home</Link>
+            </li>
+            <li>
+              <Link href="/books" className="transition hover:text-primary">All Books</Link>
+            </li>
+            <li>
+              <Link href="/add-book" className="transition hover:text-primary">Add a Book</Link>
+            </li>
+            <li>
+              <Link href="/my-borrows" className="transition hover:text-primary">My Borrows</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div className="space-y-3">
+          <h3 className="font-serif text-base font-bold text-base-content">Contact & Hours</h3>
+          <div className="space-y-2 text-sm text-base-content/75">
+            <p className="flex items-center gap-2">
+              <span className="text-primary">✉</span> support@booknook.app
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-primary">☎</span> +880 1700 000000
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-primary">⚲</span> Dhaka, Bangladesh
+            </p>
+            <p className="text-xs text-base-content/60">Digital Shelves Open 24/7</p>
+          </div>
+        </div>
+
+        {/* Socials */}
+        <div className="space-y-3">
+          <h3 className="font-serif text-base font-bold text-base-content">Connect With Us</h3>
+          <p className="text-xs text-base-content/70">
+            Join our book discussions, reading challenges, and community updates.
+          </p>
+          <div className="flex gap-2.5 pt-1">
             {socials.map((s) => (
               <a
                 key={s.name}
@@ -47,7 +82,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={s.name}
-                className="btn btn-circle btn-outline btn-sm"
+                className="btn btn-circle btn-sm border-base-300 bg-base-100 hover:border-primary hover:bg-primary hover:text-primary-content transition shadow-sm"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                   <path d={s.path} />
@@ -57,8 +92,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-base-300 py-4 text-center text-sm text-base-content/70">
-        © 2026 BookNook. All rights reserved.
+
+<div className="border-t border-base-300/60 py-3 text-center text-xs font-medium text-base-content/60">
+        © 2026 BookNook. Built with care for book lovers everywhere. All rights reserved.
       </div>
     </footer>
   );

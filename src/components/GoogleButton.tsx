@@ -11,12 +11,17 @@ export default function GoogleButton({ callbackURL = "/" }: { callbackURL?: stri
     const { error } = await authClient.signIn.social({ provider: "google", callbackURL });
     if (error) {
       setLoading(false);
-      toast.error(error.message || "Google sign-in failed");
+      toast.error(error.message || "Google sign-in failed. Please check Google OAuth configuration.");
     }
   };
 
   return (
-    <button type="button" onClick={handleClick} disabled={loading} className="btn btn-outline w-full">
+    <button
+      type="button"
+      onClick={handleClick}
+      disabled={loading}
+      className="btn btn-outline w-full rounded-2xl border-base-300 bg-base-100 font-medium text-base-content hover:border-primary hover:bg-base-200/70 shadow-sm transition"
+    >
       {loading ? (
         <span className="loading loading-spinner loading-sm" />
       ) : (
@@ -27,7 +32,7 @@ export default function GoogleButton({ callbackURL = "/" }: { callbackURL?: stri
           <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
         </svg>
       )}
-      Continue with Google
+      <span>Continue with Google</span>
     </button>
   );
 }
