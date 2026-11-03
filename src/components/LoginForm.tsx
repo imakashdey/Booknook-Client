@@ -87,7 +87,7 @@ export default function LoginForm() {
               </span>
               <button
                 type="button"
-                onClick={() => toast("Password reset is omitted as specified in assignment requirements.")}
+                onClick={() => toast("Password reset is coming soon. For now, please sign in with Google or contact support.")}
                 className="text-xs font-semibold text-primary hover:underline"
               >
                 Forgot Password?
