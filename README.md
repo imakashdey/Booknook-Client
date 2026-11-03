@@ -3,6 +3,8 @@
 **BookNook** is a cozy, modern online community library designed around a delightfully simple philosophy: **“Add a book, borrow a book, return a book.”** Readers can explore shared titles, list their own books, borrow available copies for a 7-day loan period, and track active loans with zero fuss.
 
 - 🌐 **Live Website URL:** [https://booknook-client-sandy.vercel.app](https://booknook-client-sandy.vercel.app)
+- 🖥️ **Server Repository:** [https://github.com/imakashdey/Booknook-Server](https://github.com/imakashdey/Booknook-Server)
+- 🔌 **Live API:** [https://booknook-server-liard.vercel.app](https://booknook-server-liard.vercel.app)
 - 🎨 **Color Hunt Palette:** `#FEFAF3` (Paper Cream), `#F6E2E9` (Blush Rose), `#B8CFB3` (Soft Sage), `#84A282` (Deep Forest Sage)
 
 ---
@@ -51,7 +53,7 @@
 |---|---|---|
 | `/` | Public | Home page with Swiper banner, latest 6 arrivals, How Borrowing Works, and Top Categories |
 | `/books` | Public | Grid of all books (3 per row on desktop) with search, filter, and sorting |
-| `/books/:id` | Private/Public | Comprehensive book details with loan specs and 7-day borrow modal |
+| `/books/:id` | Private | Comprehensive book details with loan specs and 7-day borrow modal |
 | `/add-book` | Private | Form to contribute books with title, author, category, copies, and image upload |
 | `/my-books` | Private | Contributor dashboard to edit titles and delete with custom confirm modal |
 | `/my-borrows` | Private | Table of user's active borrowed books with 7-day return dates and return action |
@@ -84,6 +86,8 @@ MONGODB_URI=your_mongodb_connection_string
 DB_NAME=booknook
 NEXT_PUBLIC_API_URL=http://localhost:5000
 NEXT_PUBLIC_IMGBB_KEY=your_imgbb_api_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
 ### 4. Run the development server
